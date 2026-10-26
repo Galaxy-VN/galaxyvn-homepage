@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
-export const GridItem = ({ children, href, title, thumbnail }) => (
+export const GridItem = ({ children = null, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
     <LinkBox cursor="pointer">
       <Image
@@ -13,7 +13,7 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
         placeholder="blur"
         loading="lazy"
       />
-      <LinkOverlay href={href} target="_blank">
+      <LinkOverlay href={href} target="_blank" rel="noopener noreferrer">
         <Text mt={2}>{title}</Text>
       </LinkOverlay>
       <Text fontSize={14}>{children}</Text>
@@ -23,7 +23,6 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   <Box w="100%" textAlign="center" role={"group"}>
-    <NextLink href={`/works/${id}`} passHref scroll={false}>
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}
@@ -31,35 +30,32 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           className="grid-item-thumbnail"
           placeholder="blur"
         />
-        <LinkOverlay href={`/works/${id}`}>
+        <LinkOverlay as={NextLink} href={`/works/${id}`} scroll={false}>
           <Text mt={2} fontSize={20}>
             {title}
           </Text>
         </LinkOverlay>
         <Text fontSize={14}>{children}</Text>
       </LinkBox>
-    </NextLink>
   </Box>
 )
 
 export const UseGridItem = ({ children, id, title, thumbnail }) => (
     <Box w={"100%"} textAlign={"center"} role={"group"}>
-        <NextLink href={`/uses/${id}`} passHref scroll={false}>
-            <LinkBox cursor={"pointer"}>
-                <Image
-                    src={thumbnail}
-                    alt={title}
-                    className="grid-item-thumbnail"
-                    placeholder="blur"
-                />
-                <LinkOverlay href={`/uses/${id}`}>
-                    <Text mt={2} fontSize={20}>
-                        {title}
-                    </Text>
-                </LinkOverlay>
-                <Text fontSize={14}>{children}</Text>
-            </LinkBox>
-        </NextLink>
+        <LinkBox cursor={"pointer"}>
+            <Image
+                src={thumbnail}
+                alt={title}
+                className="grid-item-thumbnail"
+                placeholder="blur"
+            />
+            <LinkOverlay as={NextLink} href={`/uses/${id}`} scroll={false}>
+                <Text mt={2} fontSize={20}>
+                    {title}
+                </Text>
+            </LinkOverlay>
+            <Text fontSize={14}>{children}</Text>
+        </LinkBox>
     </Box>
 )
 

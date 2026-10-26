@@ -24,7 +24,7 @@ const Work = () => (
             <List ml={4} my={4}>
                 <ListItem>
                     <Meta>Website (Github)</Meta>
-                    <Link href={"https://github.com/xHexed/Oregen3"} target="_blank">https://github.com/xHexed/Oregen3 <ExternalLinkIcon mx={"2px"}/></Link>
+                    <Link href={"https://github.com/xHexed/Oregen3"} target="_blank" rel="noopener noreferrer">https://github.com/xHexed/Oregen3 <ExternalLinkIcon mx={"2px"}/></Link>
                 </ListItem>
                 <ListItem>
                     <Meta>Software</Meta>

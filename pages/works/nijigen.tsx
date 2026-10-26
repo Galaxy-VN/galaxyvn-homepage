@@ -23,7 +23,7 @@ const Work = () => (
             <List ml={4} my={4}>
                 <ListItem>
                     <Meta>Website</Meta>
-                    <Link href={"https://unofficial-nijigen.camchua.moe"} target="_blank">https://unofficial-nijigen.camchua.moe <ExternalLinkIcon mx={"2px"}/></Link>
+                    <Link href={"https://unofficial-nijigen.camchua.moe"} target="_blank" rel="noopener noreferrer">https://unofficial-nijigen.camchua.moe <ExternalLinkIcon mx={"2px"}/></Link>
                 </ListItem>
                 <ListItem>
                     <Meta>Platform</Meta>

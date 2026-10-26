@@ -19,9 +19,15 @@ import {
   }
   
   export async function getServerSideProps({ req }) {
+    // only the color-mode cookie crosses to the client, never the full Cookie header
+    const cookies = (req.headers.cookie ?? '')
+      .split(';')
+      .map(c => c.trim())
+      .filter(c => c.startsWith('chakra-ui-color-mode='))
+      .join('; ')
     return {
       props: {
-        cookies: req.headers.cookie ?? ''
+        cookies
       }
     }
   }

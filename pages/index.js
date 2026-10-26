@@ -83,7 +83,8 @@ const Home = () => (
                     I&apos;m a freelancer developer and still learn for full-stack
                     developer. Feel free to check out my work that is motivation of 
                     me.
-                    <Box align="center" my={4}>
+                </Paragraph>
+                <Box align="center" my={4}>
                         <NextLink href="/works">
                             <Button
                                 rightIcon={<ChevronRightIcon />}
@@ -93,7 +94,6 @@ const Home = () => (
                             </Button>
                         </NextLink>
                     </Box>
-                </Paragraph>
             </Section>
             <Section delay={0.2}>
                 <Heading as="h3" variant="section-title">
@@ -122,7 +122,7 @@ const Home = () => (
                 </Heading>
                 <List>
                     <ListItem>
-                        <Link href="https://github.com/galaxy-vn" target="_blank">
+                        <Link href="https://github.com/galaxy-vn" target="_blank" rel="noopener noreferrer">
                             <Button
                                 variant="ghost"
                                 colorScheme="teal"
@@ -133,7 +133,7 @@ const Home = () => (
                         </Link>
                     </ListItem>
                     <ListItem>
-                        <Link href="https://twitter.com/galaxyvn_dev" target="__blank">
+                        <Link href="https://twitter.com/galaxyvn_dev" target="_blank" rel="noopener noreferrer">
                             <Button
                                 variant="ghost"
                                 colorScheme="teal"
@@ -144,7 +144,7 @@ const Home = () => (
                         </Link>
                     </ListItem>
                     <ListItem>
-                        <Link href="https://www.instagram.com/galaxyvn.dev/" target="_blank">
+                        <Link href="https://www.instagram.com/galaxyvn.dev/" target="_blank" rel="noopener noreferrer">
                             <Button
                                 variant="ghost"
                                 colorScheme="teal"
@@ -155,7 +155,7 @@ const Home = () => (
                         </Link>
                     </ListItem>
                     <ListItem>
-                        <Link href="https://www.facebook.com/galaxyvn.dev/" target={"_blank"}>
+                        <Link href="https://www.facebook.com/galaxyvn.dev/" target={"_blank"} rel={"noopener noreferrer"}>
                             <Button
                                 variant={"ghost"}
                                 colorScheme={"teal"}

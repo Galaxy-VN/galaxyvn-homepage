@@ -31,13 +31,20 @@ const VoxelBlock = () => {
             const scW = container.clientWidth
             const scH = container.clientHeight
 
-            const renderer = new THREE.WebGLRenderer({
-                antialias: true,
-                alpha: true
-            })
+            let renderer
+            try {
+                renderer = new THREE.WebGLRenderer({
+                    antialias: true,
+                    alpha: true
+                })
+            } catch (e) {
+                // shortcut: no WebGL (headless/VM/blocked GPU) → skip the 3D block instead of crashing the page
+                setLoading(false)
+                return
+            }
             renderer.setPixelRatio(window.devicePixelRatio)
             renderer.setSize(scW, scH)
-            renderer.outputEncoding = THREE.sRGBEncoding
+            renderer.outputColorSpace = THREE.SRGBColorSpace
             container.appendChild(renderer.domElement)
             refRenderer.current = renderer
             const scene = new THREE.Scene()
